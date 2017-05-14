@@ -1,3 +1,10 @@
-<p>
-  sign-up works!
-</p>
+<form>
+  <input type="text" name="name" [(ngModel)]="newUser.name" placeholder="Name">
+  <input type="text" name="email" [(ngModel)]="newUser.email" placeholder="Email Address">
+  <input type="password" name="password" [(ngModel)]="newUser.password" placeholder="Password">
+  <button (click)="signUp()">Sign Up</button>
+  <br>
+  {{errorMessage}}
+</form>
+<br>
+<a [routerLink]="['/auth/login']">Go to Login</a>

@@ -1,3 +1,16 @@
-<p>
-  note works!
-</p>
+Hi {{currentUser.name}}!
+<br><br>
+<form>
+  <textarea name="note" [(ngModel)]="note"></textarea>
+  <button (click)="addNote()">Add Note</button>
+  <br>
+  {{errorMessage}}
+</form>
+<div>
+  <h2> Notes </h2>
+  <div *ngFor="let note of notes">
+    {{note.note}}
+  </div>
+</div>
+<br>
+<button (click)="logout()">Logout</button>

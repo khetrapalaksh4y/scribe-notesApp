@@ -7,11 +7,17 @@ import { LoginComponent } from './login/login.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { AuthenticationService } from './authentication.service';
 
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { environment } from '../../environments/environment';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
-    AuthenticationRoutingModule
+    AuthenticationRoutingModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule
   ],
   declarations: [LoginComponent, SignUpComponent],
   providers: [AuthenticationService]
